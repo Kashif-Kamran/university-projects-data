@@ -1,0 +1,14 @@
+These are some of the basic instructions that we should follow to keep the git repository clean and reduce conflicts.
+
+1. Always create a new branch for a new feature. Then branch name should be id of Jira Task.
+
+2. Always pull the latest code from the remote repository before starting to work on a new feature or bug fix.
+
+3. Always create a pull request from main and avoid mergeing the code direclty into the main.
+
+4. Before starting your work, make sure you are not on main.
+
+5. Always commit your code with a proper message.
+
+6. If you are making changes to code of another team member like somebody is working on Account and you are making changes to account. Then you should inform that person and ask him to pull the latest code from the remote repository.
+
