@@ -1,0 +1,69 @@
+/* Container for Body Tab */
+.bodyDiv {
+    @apply bg-[#37474f] h-screen w-screen flex-col flex justify-center items-center gap-8
+}
+
+/* Container for Main  */
+
+.left-container {
+    @apply w-[300px] h-[100%] float-left flex justify-center bg-blue-300 scale-100 shadow-lg shadow-slate-500 transition-all duration-300 rounded-xl;
+}
+
+.left-container:hover {
+    @apply scale-105 cursor-pointer
+}
+
+/* Hazy absolute bg for container */
+.left-container-bg {
+    @apply absolute w-[100%] h-[100%] top-0 left-0 bg-gradient-to-r from-indigo-700 to-blue-900 rounded-md opacity-50
+}
+
+.today-info {
+    @apply absolute flex flex-col mt-6;
+}
+
+.today-info .day-title {
+    @apply text-[2rem] font-semibold;
+}
+
+.today-info .date {
+    @apply text-[1.1rem] mb-2 font-semibold
+}
+
+.today-info .location {
+
+    @apply relative flex justify-center items-center gap-2 font-semibold
+}
+
+.right-container {
+    @apply float-right relative h-[100%] pt-4;
+}
+
+.env-details {
+    @apply py-4 px-10 flex flex-col mb-6;
+}
+
+.env-details div {
+    @apply my-1;
+}
+
+.env-details .title {
+    @apply font-semibold;
+}
+
+.env-details .value {
+    @apply float-right;
+}
+
+/*  */
+.days-list {
+    @apply flex mt-5 mb-10 shadow-lg shadow-slate-700 mx-10 rounded-lg;
+}
+
+.days-list .day {
+    @apply p-5 px-6 cursor-pointer flex flex-col justify-between items-center transition-all duration-300 ease-in text-[1.1rem] font-semibold rounded-lg gap-2;
+}
+
+.days-list .day:hover {
+    @apply scale-105 bg-[#fff] text-black
+}
