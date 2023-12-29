@@ -1,0 +1,100 @@
+clear
+CLS
+
+//display all db
+show dbs
+
+//create db
+use mydatabase
+
+//check which db is 
+db
+
+
+//document
+
+{
+	first_name:"Ayesha",
+	last_name: "Kamran",
+	memberships:["mem1","mem2"],
+	address:{
+		street: "Street 33",
+		city: "Islamabad"
+	}
+	contacts:[
+		{name: "Fatima", relationship: "friend"},
+	]
+}
+
+
+
+
+//create collections
+
+db.createCollection('customers');
+
+//display all collections
+show collections
+
+//insert document
+db.customers.insert({
+	first_name:"XXXX",
+	last_name: "YYYY",
+});
+
+
+//see document
+db.customers.find();
+
+
+//insert more documents
+db.customers.insert([{first_name:"Ayesha",last_name: "Kamran"},{first_name:"Humera",last_name: "Sabir",gender :"female"}]);
+
+//organized
+db.customers.find().pretty();
+
+//Update document
+db.customers.update({first_name:"Ayesha"},{first_name:"Umer",last_name: "Sabir",gender :"female"});
+
+db.customers.find().pretty();
+
+//set opertaor
+db.customers.update({first_name:"Fatima"},{$set:{gender:"female"}});
+
+db.customers.find().pretty();
+
+db.customers.update({first_name:"Fatima"},{$set:{age:"11"}});
+db.customers.update(
+	{first_name:"Fatima"},
+	{$inc:{age:"12"}}
+	); // increment the value 
+
+
+
+//remove a field
+db.customers.update({first_name:"Fatima"}, {$unset:{age:1}});
+
+
+db.customers.update({first_name:"Faryal"},{first_name:"Sajid",last_name: "Akram",gender :"male"});
+
+db.customers.update({first_name:"Faryal"},{first_name:"Sajid",last_name: "Akram",gender :"male"},{upsert:true}); // insert + update
+
+db.customers.update({first_name:"Sajid"},{$rename:{"gender":"sex"}});
+
+
+
+//find
+
+db.customers.find({first_name:"Fatima"});
+
+db.customers.find($or:[{first_name:"Fatima"},{first_name:"Ayesha"}]});
+
+// Remove all data from collection 
+db.customers.remove()
+
+// remove all records based on condition
+db.customers.remove( { age{ $lt: 2 } } ); // lessthan 
+
+
+// remove 1st records based on condition
+db.customers.remove( { age{ $gt: 2 } } , true); // greaterthan 
